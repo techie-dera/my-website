@@ -38,13 +38,16 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      # 🐳 Build and push Docker image using Dockerfile in subfolder
       - name: Build & Push Docker Image
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./Dockerfile  # adjust if your Dockerfile is in a subfolder
+          file: ./mywebsites/dockerfile  # 👈 change this if your Dockerfile is in a different folder
           push: true
           tags: yourdockerhubuser/yourimage:latest
+
+
 
      
 
