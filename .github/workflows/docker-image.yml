@@ -35,13 +35,15 @@ jobs:
         uses: docker/build-push-action@v5
         
       - name: Build & Push Docker Image
-  uses: docker/build-push-action@v3
-  with:
+uses: docker/build-push-action@v3
+ with:
     context: .
-    file: ./docker/Dockerfile  # 👈 path to your Dockerfile
     push: true
-    tags: ${{ secrets.DOCKER_USERNAME }}/static-site:latest
+    tags: websiteimage/mywebsites:latest
 
-      - name:Publish image to docker hub
-        run: docker push websiteimage/mywebsites:latest
+
+
+
+   
+
 
