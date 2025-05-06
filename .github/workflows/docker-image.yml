@@ -32,7 +32,16 @@ jobs:
 
       # 🐳 Build and push Docker image
       - name: Build docker image
-        run: docker build -t websiteimage/mywebsites .
-      - name: Publish image to docker hub
+        uses: docker/build-push-action@v5
+        
+      - name: Build & Push Docker Image
+  uses: docker/build-push-action@v3
+  with:
+    context: .
+    file: ./docker/Dockerfile  # 👈 path to your Dockerfile
+    push: true
+    tags: ${{ secrets.DOCKER_USERNAME }}/static-site:latest
+
+      - name:Publish image to docker hub
         run: docker push websiteimage/mywebsites:latest
 
