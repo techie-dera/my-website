@@ -43,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./mywebsites/dockerfile  # 👈 change this if your Dockerfile is in a different folder
+          file: ./mywebsite/dockerfile  # 👈 change this if your Dockerfile is in a different folder
           push: true
           tags: yourdockerhubuser/yourimage:latest
 
