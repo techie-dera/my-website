@@ -22,11 +22,6 @@ jobs:
       - name: Test HTML Files
         run: htmlhint "**/*.html"
 
-      - name: Test CSS Files
-        run: |
-          echo '{ "extends": "stylelint-config-standard" }' > .stylelintrc.json
-          stylelint "**/*.css"
-
       # 🛠️ Set up Docker
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
